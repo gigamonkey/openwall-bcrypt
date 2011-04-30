@@ -1,3 +1,9 @@
+[This is my fork of code from http://www.openwall.com/crypt/ to add a
+target to the Makefile to build a shared library that can be used with
+my monkeylib-bcrypt Common Lisp library. Below is the original readme.
+-Peter]
+
+
 This is an implementation of a password hashing algorithm, provided
 via the crypt(3) and a reentrant interface.  It is compatible with
 OpenBSD bcrypt.c (version 2a) by Niels Provos and David Mazieres.

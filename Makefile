@@ -3,6 +3,7 @@
 # See crypt_blowfish.c for more information.
 #
 
+VERSION = 1.0.4
 CC = gcc
 AS = $(CC)
 LD = $(CC)
@@ -29,8 +30,13 @@ EXTRA_MANS = \
 
 all: $(CRYPT_OBJS) man
 
+library: libbcrypt.so.$(VERSION)
+
 check: crypt_test
 	./crypt_test
+
+libbcrypt.so.$(VERSION): $(BLOWFISH_OBJS)
+	$(CC) -shared -W1,-soname,libbcrypt.so.1 -o $@ $(BLOWFISH_OBJS)
 
 crypt_test: $(TEST_OBJS)
 	$(LD) $(LDFLAGS) $(TEST_OBJS) -o $@
@@ -59,4 +65,4 @@ $(EXTRA_MANS):
 	$(AS) $(ASFLAGS) $*.S
 
 clean:
-	$(RM) crypt_test crypt_test_threads *.o $(EXTRA_MANS) core
+	$(RM) crypt_test crypt_test_threads *.o $(EXTRA_MANS) core libbcrypt.so.$(VERSION)
