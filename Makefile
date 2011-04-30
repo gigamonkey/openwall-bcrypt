@@ -3,7 +3,8 @@
 # See crypt_blowfish.c for more information.
 #
 
-VERSION = 1.0.4
+MAJOR_VERSION = 1
+VERSION = $(MAJOR_VERSION).0.4
 CC = gcc
 AS = $(CC)
 LD = $(CC)
