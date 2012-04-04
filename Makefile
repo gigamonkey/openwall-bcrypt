@@ -4,7 +4,7 @@
 #
 
 MAJOR_VERSION = 1
-VERSION = $(MAJOR_VERSION).0.4
+VERSION = $(MAJOR_VERSION).1
 CC = gcc
 AS = $(CC)
 LD = $(CC)
